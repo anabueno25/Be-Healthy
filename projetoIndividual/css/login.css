@@ -1,0 +1,145 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-image: url("/../projetoIndividual/imagens/homemCorrendo.jpg");
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #557C70;
+    width: 100%;
+}
+
+.liZoom {
+    transition: all 0.5s;
+}
+
+.liZoom:hover {
+    transform: scale(1.2);
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 40%;
+    margin: auto;
+}
+
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBar {
+    color: #ffff;
+    list-style: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+    text-decoration: none;
+}
+
+.imagemLogo {
+    width: 70px;
+}
+
+#divDentro{
+    background-color: #D6A04F;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 3pc;
+}
+
+#divTudo1{
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+input {
+    width: 90%;
+    height: 20px;
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 10px;
+    background: #E6DFCC;  
+}
+
+#divBotao2{
+    display:flex;
+    justify-content: center;
+}
+
+footer {
+    height: 120px;
+    background-color: #557C70;
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 0;
+    padding: 0;
+    bottom: 0;
+}
+
+footer p {
+    text-align: center;
+
+}
+
+#divBotao {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.botaoCadastro {
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #ffff;
+    outline: none;
+    transition: 0.5s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.botaoCadastro:hover {
+    transition: 0.5s ease-in-out;
+    background: #557C70;
+}
+
+.botaoCadastro:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.botaoCadastro span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.label1{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
