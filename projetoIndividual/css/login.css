@@ -3,11 +3,16 @@
 }
 
 body {
-    background-image: url("/../projetoIndividual/imagens/homemCorrendo.jpg");
+    background-image: url("../imagens/homemCorrendo.jpg");
     background-size: cover;
     width: 100%;
     margin: 0;
     padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .header {
