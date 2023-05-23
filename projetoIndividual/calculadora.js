@@ -1,4 +1,5 @@
 var salvarResultado = 0;
+var atividade = 0;
 
 
 function calculo() {
@@ -25,6 +26,7 @@ function calculo() {
     var total10 = Number((8.126 * peso) + Number(845.6));
     var total11 = Number((11.711 * peso) + Number(587.7));
     var total12 = Number((9.082 * peso) + Number(658.5));
+    var imc = (peso/(altura*altura) * 10000).toFixed(2);
 
 
     if (nomeGenero == 'Masculino' && idade >= 0 && idade < 3) {
@@ -76,4 +78,49 @@ function calculo() {
         document.getElementById('ipt_taxaMb').value = `Você gasta ${total12} calorias em repouso`;
     }
 
+    if (nomeAtividade == 'sedentaria') {
+        atividade = salvarResultado * 1.2;
+        document.getElementById('ipt_tdee').value = `Você gasta ${atividade} em atividade física`;
+    }
+    else if (nomeAtividade == 'atvLeve') {
+        atividade = salvarResultado * 1.375;
+        document.getElementById('ipt_tdee').value = `Você gasta ${atividade} em atividade física`;
+    }
+    else if (nomeAtividade == 'atvModerada') {
+        atividade = salvarResultado * 1.55;
+        document.getElementById('ipt_tdee').value = `Você gasta ${atividade} em atividade física`;
+    }
+    else if (nomeAtividade == 'atvAlta') {
+        atividade = salvarResultado * 1.725;
+        document.getElementById('ipt_tdee').value = `Você gasta ${atividade} em atividade física`;
+    }
+    else if (nomeAtividade == 'atvExtrema') {
+        atividade = salvarResultado * 1.9;
+        document.getElementById('ipt_tdee').value = `Você gasta ${atividade} em atividade física`;
+    }
+
+    if (imc < 18.5) {
+        document.getElementById('ipt_imc').value = `Seu imc é ${imc}`;
+        document.getElementById('ipt_classificacao').value = `Magreza`;
+    }
+    else if (imc >= 18.5 && imc <= 24.9) {
+        document.getElementById('ipt_imc').value = `Seu imc é ${imc}`;
+        document.getElementById('ipt_classificacao').value = `Peso normal`;
+    }
+    else if (imc >= 25 && imc <= 29.9) {
+        document.getElementById('ipt_imc').value = `Seu imc é ${imc}`;
+        document.getElementById('ipt_classificacao').value = `SobrePeso`;
+    }
+    else if (imc >=30  && imc <= 34.9) {
+        document.getElementById('ipt_imc').value = `Seu imc é ${imc}`;
+        document.getElementById('ipt_classificacao').value = `Obesidade grau I`;
+    }
+    else if (imc >=35  && imc <= 40) {
+        document.getElementById('ipt_imc').value = `Seu imc é ${imc}`;
+        document.getElementById('ipt_classificacao').value = `Obesidade grau II`;
+    }
+    else if (imc >= 40) {
+        document.getElementById('ipt_imc').value = `Seu imc é ${imc}`;
+        document.getElementById('ipt_classificacao').value = `Obesidade grau III`;
+    }
 }
