@@ -71,7 +71,7 @@ a{
 input {
     width: 90%;
     height: 20px;
-    border: 2px solid;
+    border: 1px solid;
     border-radius: 8px;
     padding: 10px;
     background: #E6DFCC;  
@@ -103,8 +103,7 @@ h1 {
     color: #8f8d8d;
     text-indent: 0.01px;
     border-radius: 10px;
-    border: 2px solid;
-    border-color: black;
+    border: 1px solid black;
     font-size: 14px;
     
 }
