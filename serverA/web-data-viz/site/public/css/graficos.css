@@ -1,0 +1,12 @@
+
+#divGrafico{
+    position: relative;
+    width: 100vh;
+    justify-content: center;
+
+}
+
+#divpegaGrafico {
+    display: flex;
+    justify-content: center;
+}

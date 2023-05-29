@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="icon" href="../assets/imgs/homemCorrendo.jpg">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be Healthy | Tempo Real</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="dashboards.css">
+    <link rel="stylesheet" href="../css/graficos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="../js/funcoes.js"></script>
+    <script src="./alerta.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="validarSessao(), atualizacaoPeriodica()">
+
+
+    <div class="janela">
+
+
+        <div class="header-left dash-header">
+
+            <img src="../assets/imgs/Cadastro.png" class="imagemLogo">
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav">
+                <h3>Gráficos</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Gráficos</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Mural de Avisos</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash">
+            <div id="alerta">
+            </div>
+            <div class="regua">
+                <div class="item-tmb">
+                    <h4>TMB:</h4>
+                    <h2>&lt;=5°C</h2>
+                </div>
+                <div class="item-tdee">
+                    <h4>TDEE</h4>
+                    <h2>&lt;=10°C</h2>
+                </div>
+                <div class="item-imc">
+                    <h4>IMC</h4>
+                    <h2>20°C</h2>
+                </div>
+                <div class="item-classificacao">
+                    <h4>Classificação</h4>
+                    <h2>&gt;=22°C</h2>
+                </div>
+
+
+            </div>
+
+            <div id="divEspacamentografico">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+
+            <div id="divpegaGrafico">
+                <div id="divGrafico">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+
+        </div>
+
+    </div>
+    </div>
+
+
+</body>
+
+<script>
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['TMB', 'TDEE', 'IMC', 'Classificação'],
+        datasets: [{
+            label: 'Dados da sua calculadora',
+            backgroundColor: '#557C70',
+            borderColor: '#fff',
+            data: [12, 19, 3, 5],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+
+
+
+    function atualizacaoPeriodica() {
+        obterdados(1);
+        obterdados(2);
+        obterdados(3);
+        obterdados(4);
+
+        setTimeout(atualizacaoPeriodica, 5000);
+    }
+
+
+</script>
+
+</html>

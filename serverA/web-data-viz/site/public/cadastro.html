@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaTech | Cadastro</title>
+
+
+    <script src="./js/funcoes.js"></script>
+    <script src="./js/cadastro.js"></script>
+
+
+    <link rel="icon" href="./assets/imgs/homemCorrendo.jpg">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <img src="./assets/imgs/Cadastro.png" class="imagemLogo">
+            <ul class="navBar">
+                <li class="liZoom"><a href="cadastro.html">Cadastro</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="login.html">Login</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom">Sobre mim</li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="calculadora.html">Calculadora TDEE</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="quiz.html">Quiz</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+       
+        <div id="divEspacamento9">
+            <br>
+            <br>
+            <br>
+        </div>
+        <div id="divTudo">
+            <div id="divAmarela">
+                <div id="cadastroBeHealthy">
+                    <div id="cadastroBeHealthy2">
+                        <h2 class="label1">BEM-VINDO AO CADASTRO BE HEALTHY!</h2>
+                        <div id="divEspacamento">
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                        <div id="divBotao">
+                            <button class="botaoCadastro" onclick="aparecer()">Faça já seu cadastro!</button>
+                            <svg width="180px" height="60px" viewBox="0 0 180 60" class="border"></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divEspacamento">
+            <br>
+            <br>
+
+        <div id="divCompleta" style="display:none;">
+            <div id="divTudo1">
+                <div id="divDentro">
+                    <div id="divDentro1">
+                        <h3 class="label2">Nome:</h2>
+                            <input id="nome_input" placeholder="Digite seu nome">
+                            <h3 class="label2">E-mail:</h2>
+                                <input id="email_input" placeholder="Digite seu e-mail">
+                                <h3 class="label2">Telefone:</h2>
+                                    <input id="telefone_input" type="number" placeholder="Digite seu telefone">
+                                    <h3 class="label2">Senha:</h2>
+                                        <input id="senha_input" type="password" placeholder="Digite sua senha">
+                                        <h3 class="label2">Confirmação de Senha:</h2>
+                                            <input id="confirmacao_senha_input" type="password" placeholder="Confirme sua senha">
+                                            <div id="divEspacamento">
+                                                <br>
+                                                <br>
+                                                <div id="divBotao2">
+                                                    <button class="botaoCadastro" onclick="cadastrar()">Cadastrar</button>
+                                                </div>
+                                            </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="espaçamento5">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container2"><br>
+            <p>Developed by Ana Luiza<br>
+                RA: 02231043<br>
+                1°CCO
+            </p>
+    </footer>
+
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var telefoneVar = telefone_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || telefoneVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Todos os seus campos estão em branco! Favor inserir os dados corretamente.";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                telefoneServer: telefoneVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
