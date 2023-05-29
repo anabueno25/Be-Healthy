@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaTech | Login</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/imgs/homemCorrendo.jpg">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img src="./assets/imgs/Cadastro.png" class="imagemLogo">
+            <ul class="navBar">
+                <li class="liZoom"><a href="cadastro.html">Cadastro</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="login.html">Login</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom">Sobre mim</li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="calculadora.html">Calculadora TDEE</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="quiz.html">Quiz</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+
+        <div id="divEspacamento">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        
+        <div id="divCompleta">
+            <div id="divTudo1">
+                <div id="divDentro">
+                    <div id="divDentro1">
+                        <h2 class="label1">Faça seu login!</h2>
+                        <h3 class="label2">E-mail:</h2>
+                            <input id="email_input" placeholder="Digite seu e-mail">
+                            <h3 class="label2">Senha:</h2>
+                                <input id="senha_input" placeholder="Digite sua senha" type="password">
+                                <div id="divEspacamento">
+                                    <br>
+                                    <br>
+                                    <div id="divBotao2">
+                                        <button class="botaoCadastro" onclick="entrar()">Cadastrar</button>
+                                    </div>
+    
+                                </div>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+
+
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="divPegaerro">
+                <div id="div_erros_login"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="espaçamento5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <footer>
+        <div class="container2"><br>
+            <p>Developed by Ana Luiza<br>
+                RA: 02231043<br>
+                1°CCO
+            </p>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Todos os seus campos estão em branco! Favor inserir os dados corretamente.";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

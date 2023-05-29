@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="icon" href="./assets/imgs/homemCorrendo.jpg">
+    <link rel="stylesheet" a href="css/calculadora.css">
+    <script src="js/calculadora.js"></script>
+</head>
+
+<body>
+   
+    <div class="header">
+        <div class="container">
+            <img src="./assets/imgs/Cadastro.png" class="imagemLogo">
+            <ul class="navBar">
+                <li class="liZoom"><a href="cadastro.html">Cadastro</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="login.html">Login</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom">Sobre mim</li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="calculadora.html">Calculadora TDEE</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="quiz.html">Quiz</a></li>
+                <li class="liZoom"> | </li>
+                <li class="liZoom"><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="espaco">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+
+    <div id="divCompleta">
+            <div id="divDentro">
+                <div id="divDentro1">
+
+                    <div id="divInfo">
+                        <h3 class="label2">Gênero:</h2>
+                            <select id="genero" onchange="calculo()">
+                                <option value="Feminino">Feminino</option>
+                                <option value="Masculino">Masculino</option>
+                            </select>
+                            <h3 class="label2">Idade:</h2>
+                                <input id="ipt_idade" placeholder="Digite sua idade" onkeyup="calculo()">
+                                <h3 class="label2">Altura:</h2>
+                                    <input id="ipt_altura" placeholder="Digite sua altura em cm" onkeyup="calculo()">
+                                    <h3 class="label2">Peso:</h2>
+                                        <input id="ipt_peso" placeholder="Digite seu peso kg" onkeyup="calculo()">
+                                        <h3 class="label2">Atividade:</h2>
+                                            <select id="atividade" onchange="calculo()">
+                                                <option value="sedentaria">Sedentária</option>
+                                                <option value="atvLeve">Atividade leve</option>
+                                                <option value="atvModerada">Atividade moderada</option>
+                                                <option value="atvAlta">Alta atividade</option>
+                                                <option value="atvExtrema">Atividade extrema</option>
+                                            </select>
+                    </div>
+                    <div id="divTudoVerde">
+                        <div id="divVerde">
+                            <h3 class="label3">Taxa metabólica basal</h3>
+                            <input id="ipt_taxaMb">
+                            <h3 class="label3">TDEE</h3>
+                            <input id="ipt_tdee">
+                            <h3 class="label3">IMC</h3>
+                            <input id="ipt_imc">
+                            <h3 class="label3">Classificação</h3>
+                            <input id="ipt_classificacao">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="botao">
+                    <a href="saibamais.html">
+                    <button class="botaoCalcular">Saiba mais o significado dos seus resultados</button>
+                </a>
+                </div>
+        </div>
+        </div>
+    </div>
+
+
+    <div id="divEspacamento">
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+        <footer>
+            <div class="container2"><br>
+                <p>Developed by Ana Luiza<br>
+                    RA: 02231043<br>
+                    1°CCO
+                </p>
+        </footer>
+</body>
+
+</html>
