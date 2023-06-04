@@ -12,7 +12,49 @@ a{
     text-decoration: none;
     color: #fff;
 }
+#divEntenda {
+    display: flex;
+    justify-content: space-around;
+}
 
+#p1 {
+    background-color: #557C70;
+    color: white;
+    border-radius: 10px;
+}
+#p2 {
+    background-color: #D6A04F;
+    border-radius: 10px;
+    font-weight: 600;
+}
+#p3 {
+    background-color: #557C70;
+    color: white;
+    border-radius: 10px;;
+}
+#p4 {
+    background-color: #D6A04F;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+#divTextoComida {
+    display: flex;
+}
+#divPegaTexto {
+    display: flex;
+
+}
+
+#botao3 {
+    display: flex;
+    justify-content: center;
+}
+.comendo {
+    height: 500px;
+    border: 2px solid white;
+    border-radius: 20px;
+}
 .header {
     background-color: #557C70;
     width: 100%;
@@ -81,8 +123,11 @@ a{
     background-color: #D6A04F;
     border-radius: 10px;
     width: 640px;
+    padding: 10px;
+    text-align: justify;
     line-height: 35px;
-    box-shadow: 5px 4px 4px black;
+    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
+    font-weight: 600;
 }
 
 .imgMoca {
@@ -108,13 +153,23 @@ a{
     border-radius: 10px;
     width: 467px;
     line-height: 35px;
-    box-shadow: 5px 4px 4px black;
+    padding: 10px;
+    text-align: justify;
+    line-height: 35px;
+    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
+    font-weight: 400;
 }
 
 #homePt2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+#divCor {
+    background-color: #f3eedb;
+    display: flex;
+    justify-content: space-around;
 }
 
 .imgMoca {
@@ -147,12 +202,14 @@ a{
 
 #divPrimeiroTexto .listagem1 {
     background-color: #D6A04F;
-    color: #FFFF;
+    color: black;
     border-radius: 10px;
     width: 520px;
     height: 300px;
     line-height: 35px;
-    box-shadow: 5px 4px 4px black;
+    font-weight: 600;
+    text-align: justify;
+    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
 }
 
 .label1 {
@@ -166,7 +223,9 @@ a{
     border-radius: 10px;
     width: 520px;
     line-height: 35px;
-    box-shadow: 5px 4px 4px black;
+    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
+    font-weight: 400;
+    text-align: justify;
 }
 
 footer {
@@ -192,19 +251,134 @@ footer p {
 #divBotao {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .botaoConheca {
-    border-radius: 6px;
-    width: 350px;
-    height: 35px;
-    color: black;
-    box-shadow: 0 0 40px 40px #ffffff inset, 0 0 0 0 #557C70;
-    -webkit-transition: all 150ms ease-in-out;
-    transition: all 150ms ease-in-out;
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #D6A04F;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
 }
 
+.botaoConheca {
+    transition: all 0.5s;
+}
 
 .botaoConheca:hover {
-    box-shadow: 0 0 10px 0 #557C70 inset, 0 0 10px 4px #557C70;
+    transform: scale(1.2);
+}
+
+.slider {
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slides {
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 25%;
+    position: relative;
+    transition: 2s;
+}
+
+#pegaTudo {
+    background-color:#f3eedb;
+    height: 500px;
+}
+
+.slide img {
+    width: 800px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.manual-navigation {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+.manual-btn:hover{
+    background-color: white;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+
+.navigation-auto div{
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ navigation-auto .auto-btn1{
+    background-color: white;
+}
+
+#radio2:checked ~ navigation-auto .auto-btn1{
+    background-color: white;
+}
+
+#radio3:checked ~ navigation-auto .auto-btn1{
+    background-color: white;
+}
+
+#radio4:checked ~ navigation-auto .auto-btn1{
+    background-color: white;
 }

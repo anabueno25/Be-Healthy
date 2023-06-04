@@ -10,6 +10,8 @@
 
   <script src="./js/funcoes.js"></script>
   <script src="cadastro.js"></script>
+  <script src="js/script.js"></script>
+
 
   <link rel="icon" href="./assets/imgs/homemCorrendo.jpg">
   <link rel="stylesheet" href="./css/home.css">
@@ -22,63 +24,65 @@
 <body>
   <div class="header">
     <div class="container">
-        <img src="./assets/imgs/Cadastro.png" class="imagemLogo">
-        <ul class="navBar">
-            <li class="liZoom"><a href="cadastro.html">Cadastro</a></li>
-            <li class="liZoom"> | </li>
-            <li class="liZoom"><a href="login.html">Login</a></li>
-            <li class="liZoom"> | </li>
-            <li class="liZoom">Sobre mim</li>
-            <li class="liZoom"> | </li>
-            <li class="liZoom"><a href="calculadora.html">Calculadora TDEE</a></li>
-            <li class="liZoom"> | </li>
-            <li class="liZoom"><a href="quiz.html">Quiz</a></li>
-            <li class="liZoom"> | </li>
-            <li class="liZoom"><a href="index.html">Home</a></li>
-        </ul>
-    </div>
-</div>
-  
-  <div class="home">
-    <h2 class="label1">Quais são os benefícios dos hábitos saudáveis? </h2>
-  </div>
-  <div class="divEspacamento">
-    <br>
-    <br>
-  </div>
-  <div id="homePt1">
-    <div id="divFotoSalada">
-      <img src="./assets/imgs/primeiraSalada.jpg" alt="Foto salada" class="imgSalada">
-    </div>
-    <div id="texto1">
-      <h3 class="label2">Os benefícios das atividades físicas e boa alimentação vão além da queima de
-        calorias, neles
-        incluem o fortalecimento da musculatura, melhora no metabolismo e na circulação sanguínea, além de
-        ajudar na
-        diminuição da ansiedade e do estresse, colaborando na qualidade do sono e saúde mental. Manter
-        hábitos
-        saudáveis, praticando exercícios e tendo uma alimentação balanceada, também pode trazer benefícios
-        para a
-        sua saúde mental.</h3>
+      <img src="./assets/imgs/Cadastro.png" class="imagemLogo">
+      <ul class="navBar">
+        <li class="liZoom"><a href="cadastro.html">Cadastro</a></li>
+        <li class="liZoom"> | </li>
+        <li class="liZoom"><a href="login.html">Login</a></li>
+        <li class="liZoom"> | </li>
+        <li class="liZoom"><a href="sobreMim.html">Sobre mim</a></li>
+        <li class="liZoom"> | </li>
+        <li class="liZoom"><a href="quiz.html">Quiz</a></li>
+        <li class="liZoom"> | </li>
+        <li class="liZoom"><a href="index.html">Home</a></li>
+      </ul>
     </div>
   </div>
-  <div class="divEspacamento2">
-    <br>
-    <br>
+
+  <div id="pegaTudo">
+    <div class="home">
+      <h2 class="label1">Quais são os benefícios dos hábitos saudáveis? </h2>
+    </div>
+    <div class="divEspacamento">
+      <br>
+      <br>
+
+    </div>
+    <div id="homePt1">
+      <div id="texto1">
+        <p>Os benefícios das atividades físicas e boa alimentação vão além da queima de
+          calorias, neles
+          incluem o fortalecimento da musculatura, melhora no metabolismo e na circulação sanguínea, além de
+          ajudar na
+          diminuição da ansiedade e do estresse, colaborando na qualidade do sono e saúde mental. Manter
+          hábitos
+          saudáveis, praticando exercícios e tendo uma alimentação balanceada, também pode trazer benefícios
+          para a
+          sua saúde mental.</p>
+      </div>
+      <div id="homePt2">
+        <div id="texto2">
+          <p>Adicionalmente a isto, a falta de um estilo de vida saudável ocasiona o sedentarismo, que
+            é responsável pelo surgimento de uma série de doenças, além de intensificar muitos problemas de saúde já
+            existentes, como a diabetes, aumento nos níveis de colesterol, osteoporose, dor lombar, hipertensão
+            arterial, doenças cardiovasculares e doenças pulmonares.</p>
+        </div>
+      </div>
+    </div>
+    <div id="divPula">
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="botao3">
+      <a href="./classificacao.html">
+      <button class="botaoConheca">Entenda a classificação dos alimentos</button>
+      </a>
+      </div>
+    </div>
   </div>
 
 
-  <div id="homePt2">
-    <div id="texto2">
-      <h3 class="label2">Adicionalmente a isto, a falta de um estilo de vida saudável ocasiona o sedentarismo, que
-        é responsável pelo surgimento de uma série de doenças, além de intensificar muitos problemas de saúde já
-        existentes, como a diabetes, aumento nos níveis de colesterol, osteoporose, dor lombar, hipertensão
-        arterial, doenças cardiovasculares e doenças pulmonares.</h3>
-    </div>
-    <div id="divFotoMoça">
-      <img src="./assets/imgs/mocaSaudavel.jpg" alt="Moça saudável" class="imgMoca">
-    </div>
-  </div>
 
 
   <div class="divEspacamento3">
@@ -87,7 +91,7 @@
   </div>
 
   <div id="conferir">
-    <h2 class="label1">Quais são os benefícios dos hábitos saudáveis? </h2>
+    <h2 class="label1">Como posso melhorar meus hábitos saudáveis? </h2>
   </div>
   <div class="divEspacamento4">
     <br>
@@ -121,16 +125,59 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
   </div>
 
-  <div id="divBotao">
-    <button class="botaoConheca">Conheça mais sobre mim/projeto</button>
+  <div id="divCor">
+
+    <div id="divCentro">
+      <div class="slider">
+        <div class="slides">
+          <input type="radio" name="radio-btn" id="radio1">
+          <input type="radio" name="radio-btn" id="radio2">
+          <input type="radio" name="radio-btn" id="radio3">
+          <input type="radio" name="radio-btn" id="radio4">
+
+          <div class="slide first">
+            <img src="assets/imgs/mocaSaudavel.jpg" alt="imagem1" />
+          </div>
+          <div class="slide">
+            <img src="assets/imgs/primeiraSalada.jpg" alt="imagem2" />
+          </div>
+          <div class="slide">
+            <img src="assets/imgs/fotodeFundo.jpg" alt="imagem3" />
+          </div>
+          <div class="slide">
+            <img src="assets/imgs/saladaCozinha.jpg" alt="imagem4" />
+          </div>
+
+          <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+          </div>
+        </div>
+
+        <div class="manual-navigation">
+          <label for="radio1" class="manual-btn"></label>
+          <label for="radio2" class="manual-btn"></label>
+          <label for="radio3" class="manual-btn"></label>
+          <label for="radio4" class="manual-btn"></label>
+        </div>
+      </div>
+    </div>
+    <div id="divBotao">
+      <a href="./sobreMim.html">
+      <button class="botaoConheca">Conheça mais sobre mim</button>
+    </a>
+    </div>
   </div>
 
-  <div id="espaçamento5">
-    <br>
+  </div>
+
+
+
+  <div id="divEspacoN">
     <br>
     <br>
     <br>

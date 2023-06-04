@@ -31,9 +31,7 @@
                 <li class="liZoom"> | </li>
                 <li class="liZoom"><a href="login.html">Login</a></li>
                 <li class="liZoom"> | </li>
-                <li class="liZoom">Sobre mim</li>
-                <li class="liZoom"> | </li>
-                <li class="liZoom"><a href="calculadora.html">Calculadora TDEE</a></li>
+                <li class="liZoom"><a href="sobreMim.html">Sobre mim</a></li>
                 <li class="liZoom"> | </li>
                 <li class="liZoom"><a href="quiz.html">Quiz</a></li>
                 <li class="liZoom"> | </li>
@@ -148,6 +146,14 @@
         if (nomeVar == "" || emailVar == "" || telefoneVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Todos os seus campos estão em branco! Favor inserir os dados corretamente.";
+
+            finalizarAguardar();
+            return false;
+        }
+
+        if (senhaVar != confirmacaoSenhaVar) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = "Suas senhas não coincidem!";
 
             finalizarAguardar();
             return false;

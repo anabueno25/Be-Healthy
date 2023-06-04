@@ -103,8 +103,8 @@ function calcular(req, res) {
     var salvarResultado = req.body.salvarResultadoServer;
     var atividade = req.body.atividadeServer;
     var imc = req.body.imcServer;
-    var idUsuario = req.params.ID_USUARIO;
-
+    var idUsuario = req.body.idUsuarioServer;
+    console.log ('cheguei no controller');
 
     // Faça as validações dos valores
     if (idUsuario == undefined) {

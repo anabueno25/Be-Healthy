@@ -60,9 +60,14 @@ function buscarMedidasEmTempoReal(idAquario) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+function buscarDadosCalculadora(id) {
+    instrucaoSql = `select tmb, tdee, imc from calculadora join cadastro on fkId = id where id = ${id} limit 1;`
+    return database.executar(instrucaoSql);
 
+}
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    buscarDadosCalculadora
 }

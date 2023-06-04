@@ -7,15 +7,6 @@ function calcular() {
     var optionValue = select.options[select.selectedIndex];
     var nomeGenero = (select.value);
 
-    /*var nutricaoPessoa = {
-        id: sessionStorage(nomeUsuario),
-        genero: nomeGenero,
-        idade: idade,
-        altura: altura,
-        peso: peso,
-        atividade: nomeAtividade
-    }*/
-
     var idade = Number(ipt_idade.value);
     var altura = Number(ipt_altura.value);
     var peso = Number(ipt_peso.value);
@@ -35,7 +26,7 @@ function calcular() {
     var total10 = Number((8.126 * peso) + Number(845.6));
     var total11 = Number((11.711 * peso) + Number(587.7));
     var total12 = Number((9.082 * peso) + Number(658.5));
-    var imc = (peso / (altura * altura) * 10000).toFixed(2);
+    var imc = (peso / (altura * altura) * 10000);
 
 
     if (nomeGenero == 'Masculino' && idade >= 0 && idade < 3) {

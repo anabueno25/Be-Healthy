@@ -51,6 +51,8 @@
                 </a>
             </div>
 
+
+
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
@@ -63,23 +65,21 @@
             <div class="regua">
                 <div class="item-tmb">
                     <h4>TMB:</h4>
-                    <h2>&lt;=5°C</h2>
+                    <h2 id="dadoTmb"></h2>
                 </div>
                 <div class="item-tdee">
                     <h4>TDEE</h4>
-                    <h2>&lt;=10°C</h2>
+                    <h2 id="dadoTdee"></h2>
                 </div>
                 <div class="item-imc">
                     <h4>IMC</h4>
-                    <h2>20°C</h2>
+                    <h2 id="dadoImc"></h2>
                 </div>
-                <div class="item-classificacao">
-                    <h4>Classificação</h4>
-                    <h2>&gt;=22°C</h2>
-                </div>
+
 
 
             </div>
+
 
             <div id="divEspacamentografico">
                 <br>
@@ -95,50 +95,88 @@
                 </div>
 
 
+            </div>
+
         </div>
-
     </div>
-    </div>
-
 
 </body>
 
 <script>
 
-const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('myChart');
+    var dadosGrafico = [];
 
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['TMB', 'TDEE', 'IMC', 'Classificação'],
-        datasets: [{
-            label: 'Dados da sua calculadora',
-            backgroundColor: '#557C70',
-            borderColor: '#fff',
-            data: [12, 19, 3, 5],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
+    var meuGrafico = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['TMB', 'TDEE', 'IMC'],
+            datasets: [{
+                label: 'Dados da sua calculadora',
+                backgroundColor: '#557C70',
+                borderColor: '#fff',
+                data: dadosGrafico,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
-    }
-});
+    });
+
+    var idUsuario2 = sessionStorage.ID_USUARIO;
+    window.load = pegarDados(idUsuario2);
 
 
+    setInterval(() => {
+        pegarDados(idUsuario2);
+    }, 10000)
+    function pegarDados(id) {
+        fetch(`/medidas/listarDados/${id}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
 
 
+            if (resposta.ok) {
+                resposta.json().then(function (dados) {
+                    console.log(dados[0])
 
-    function atualizacaoPeriodica() {
-        obterdados(1);
-        obterdados(2);
-        obterdados(3);
-        obterdados(4);
+                    if (dados.length > 0) {
+                        dadosGrafico.push(dados[0].tmb);
+                        dadosGrafico.push(dados[0].tdee);
+                        dadosGrafico.push(dados[0].imc);
 
-        setTimeout(atualizacaoPeriodica, 5000);
+                        meuGrafico.update();
+
+                        dadoTmb.innerHTML = dados[0].tmb;
+                        dadoTdee.innerHTML = dados[0].tdee;
+                        dadoImc.innerHTML = dados[0].imc;
+                    }
+
+                    else {
+                        dadosGrafico = [0, 0, 0];
+                    }
+
+                })
+
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
     }
 
 

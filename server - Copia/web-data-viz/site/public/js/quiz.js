@@ -168,11 +168,11 @@ function verificarSeAcertou(nQuestao, resposta) {
 
     if(respostaEscolhida == certa) {
         //console.log("Acertou")
-        //respostaEsta.textContent = "Correta 😊"
+        //respostaEsta.textContent = "Correta"
         pontos += 10 // pontos = pontos + 10
     } else {
         //console.log("Errou!")
-        //respostaEsta.textContent = "Errada 😢"
+        //respostaEsta.textContent = "Errada"
     }
 
     // atualizar placar
@@ -231,12 +231,9 @@ function fimDoJogo() {
     // OCULTAR O ARTICLE DA QUESTAO
     articleQuestoes.style.display = 'none'
 
-    gravarPontos();
-
     setTimeout(function() {
         pontos = 0 // zerar placar
         location.reload();
-    }, 10000)
-    
+    }, 5000)
 }
 

@@ -73,16 +73,17 @@
 
 <script>
     const ctx = document.getElementById('myChart');
+    // grafico.data.datasets[0].data;
 
-    new Chart(ctx, {
+    var grafico = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['TMB', 'TDEE', 'IMC', 'Classificação'],
+            labels: ['TMB', 'TDEE', 'IMC'],
             datasets: [{
                 label: 'Dados da sua calculadora',
                 backgroundColor: '#557C70',
                 borderColor: '#fff',
-                data: [12, 19, 3, 5],
+                data: [12, 4, 3, 5],
                 borderWidth: 1
             }]
         },
@@ -94,6 +95,13 @@
             }
         }
     });
+    alert (grafico.data.datasets[0].data)
+
+    
+
+
+
+    
 </script>
 
 </html>
