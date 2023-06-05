@@ -59,6 +59,7 @@
 
         </div>
 
+
         <div class="dash">
             <div id="alerta">
             </div>
@@ -80,7 +81,35 @@
 
             </div>
 
+            <div id="divBr">
+                <br>
+                <br>
+                <br>
+            </div>
 
+
+            <div id="pegaMetrica">
+                <div id="metricas">
+                    <div id="divMetricas">
+                        <h3>IMC < 18,5 - Abaixo do peso</h3>
+                                <h3>IMC >= 18,5 e IMC <= 24,9 - Peso normal</h3>
+                                        <h3>IMC >= 25 e IMC < 29,9 - Sobrepeso</h3>
+                    </div>
+
+                    <div id="divMetricas2">
+                        <h3>IMC >= 30 e IMC <= 34,9 - Obesidade grau I</h3>
+                                <h3>IMC >= 35 e IMC < 39,9 - Obesidade grau II</h3>
+                                        <h3>IMC >= 40 - Obesidade grau III ou mórbida</h3>
+                    </div>
+
+                </div>
+
+                <div id="espaco">
+                    <br>
+                    <br>
+                </div>
+
+            </div>
             <div id="divEspacamentografico">
                 <br>
                 <br>
@@ -92,6 +121,11 @@
             <div id="divpegaGrafico">
                 <div id="divGrafico">
                     <canvas id="myChart"></canvas>
+                </div>
+
+
+                <div id="referencia">
+                    <h3 class="calculo"> O cálculo do IMC é apenas uma referência!</h3>
                 </div>
 
 
@@ -113,7 +147,7 @@
             labels: ['TMB', 'TDEE', 'IMC'],
             datasets: [{
                 label: 'Dados da sua calculadora',
-                backgroundColor: '#557C70',
+                backgroundColor: '#D6A04F',
                 borderColor: '#fff',
                 data: dadosGrafico,
                 borderWidth: 1

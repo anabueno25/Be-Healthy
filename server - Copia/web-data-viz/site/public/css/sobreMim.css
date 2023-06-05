@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 #divTxt {
     width: 100%;
     display: flex;
@@ -19,8 +20,9 @@ body {
     color: white;
     box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
 }
+
 #divTxt:hover {
-    scale: 1.1;   
+    scale: 1.1;
     color: #D6A04F;
 }
 
@@ -47,32 +49,36 @@ body {
     color: white;
     padding: 20px;
     box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
-    color:black;
+    color: black;
 }
 
 #divTxt3:hover {
-    scale: 1.1;   
+    scale: 1.1;
 }
 
-#divDesafio{
+#divDesafio {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 500px;
     width: 690px;
 }
+
 #divTxt2:hover {
-    scale: 1.1;   
+    scale: 1.1;
 }
+
 .divCardzinhos {
-    
+
     display: flex;
     width: 100%;
 }
-a{
+
+a {
     text-decoration: none;
     color: #fff;
 }
+
 .header {
     background-color: #557C70;
     width: 100%;
@@ -121,120 +127,149 @@ a{
     box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
     border-radius: 20px;
 }
+
 .carousel-container {
     width: 400px;
     height: 320px;
     overflow: hidden;
     margin: 0 auto;
 }
+
 .carousel {
     display: flex;
     width: 1200px;
     animation: sliding 12s infinite;
 }
+
 #divTudo {
     display: flex;
     justify-content: space-around;
     background-color: #f3eedb;
 }
+
 #botao {
     display: flex;
     justify-content: center;
 }
+
 .divTudissimo {
     display: flex;
     justify-content: space-around;
     background-color: #f3eedb;
 }
+
 .carousel div {
     width: 400px;
     height: 250px;
     background-size: cover;
     background-position: center;
 }
+
 .carousel:hover {
     animation-play-state: paused;
 }
+
 .carousel .image-one {
     background-image: url("../assets/imgs/eu.jpg");
     height: 330px;
 }
+
 .carousel .image-two {
     background-image: url("../assets/imgs/eu2.jpg");
     height: 330px;
 }
+
 .carousel .image-tree {
     background-image: url("../assets/imgs/eu3.jpg");
     height: 330px;
 }
+
 .carousel .image-four {
     background-image: url("../assets/imgs/cake.jpg");
     height: 330px;
 }
+
 .carousel .image-five {
     background-image: url("../assets/imgs/fotoComida.jpg");
     height: 330px;
 }
+
 .carousel .image-six {
     background-image: url("../assets/imgs/refeicao1.jpg");
     height: 330px;
 }
+
 @keyframes sliding {
     30% {
         transform: translateX(0);
-   }
+    }
+
     35% {
         transform: translateX(-400px);
-   }
+    }
+
     65% {
         transform: translateX(-400px);
-   }
+    }
+
     70% {
         transform: translateX(-800px);
-   }
+    }
+
     98% {
         transform: translateX(-800px);
-   }
+    }
+
     100% {
         transform: translateX(0);
-   }
+    }
 }
+
 @media screen and (max-width: 768px) {
     .carousel-wrapper {
         width: 312px;
         height: 210px;
-   }
+    }
+
     .carousel-container {
         width: 240px;
         height: 150px;
-   }
+    }
+
     .carousel {
         width: 720px;
-   }
-    .carousel > div {
+    }
+
+    .carousel>div {
         width: 240px;
         height: 150px;
-   }
+    }
+
     @keyframes sliding {
         30% {
             transform: translateX(0);
-       }
+        }
+
         35% {
             transform: translateX(-240px);
-       }
+        }
+
         65% {
             transform: translateX(-240px);
-       }
+        }
+
         70% {
             transform: translateX(-480px);
-       }
+        }
+
         98% {
             transform: translateX(-480px);
-       }
+        }
+
         100% {
             transform: translateX(0);
-       }
-   }
+        }
+    }
 }
 
 #divAmarela {
@@ -271,6 +306,7 @@ a{
     height: 100px;
     justify-content: center;
 }
+
 #divPegatxt {
     display: flex;
     justify-content: space-around;
@@ -290,6 +326,7 @@ a{
     color: white;
 
 }
+
 .botaoCalcular {
     width: 300px;
     height: 40px;
@@ -301,6 +338,7 @@ a{
     position: relative;
     border-radius: 10px;
 }
+
 .botaoCalcular {
     transition: all 0.5s;
 }
@@ -310,9 +348,17 @@ a{
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 
 .container2 {
@@ -323,25 +369,26 @@ a{
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-  }
-  
-  .card {
+}
+
+.card {
     display: flex;
     height: 280px;
     width: 220px;
     background-color: #557C70;
     border-radius: 10px;
     box-shadow: 1rem 0 3rem #E6DFCC;
-  /*   margin-left: -50px; */
+    /*   margin-left: -50px; */
     transition: 0.4s ease-out;
     position: relative;
     left: 0px;
-  }
-  
-  .card:not(:first-child) {
-      margin-left: -50px;
-  }
-  #divValores {
+}
+
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+#divValores {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -349,80 +396,81 @@ a{
     width: 100%;
     height: 100%;
     justify-content: space-evenly;
-  }
-  .card:hover {
+}
+
+.card:hover {
     transform: translateY(-20px);
     transition: 0.4s ease-out;
-  }
-  
-  .card:hover ~ .card {
+}
+
+.card:hover~.card {
     position: relative;
     left: 50px;
     transition: 0.4s ease-out;
-  }
-  
-  .title {
+}
+
+.title {
     color: white;
     font-weight: 300;
     position: absolute;
     left: 20px;
     top: 15px;
-  }
-  
-  .bar {
+}
+
+.bar {
     position: absolute;
     top: 100px;
     left: 20px;
     height: 5px;
     width: 150px;
-  }
-  
-  .emptybar {
+}
+
+.emptybar {
     background-color: #E6DFCC;
     width: 100%;
     height: 100%;
-  }
-  
-  .filledbar {
+}
+
+.filledbar {
     position: absolute;
     top: 0px;
     z-index: 3;
     width: 0px;
     height: 100%;
-    background: rgb(0,154,217);
-    background: linear-gradient(90deg, rgba(0,154,217,1) 0%, #D6A04F 65%, rgba(255,186,0,1) 100%);
+    background: rgb(0, 154, 217);
+    background: linear-gradient(90deg, rgba(0, 154, 217, 1) 0%, #D6A04F 65%, rgba(255, 186, 0, 1) 100%);
     transition: 0.6s ease-out;
-  }
-  
-  .card:hover .filledbar {
+}
+
+.card:hover .filledbar {
     width: 120px;
     transition: 0.4s ease-out;
-  }
-  
-  .circle {
+}
+
+.circle {
     position: absolute;
     top: 150px;
     left: calc(50% - 60px);
-  }
-  
-  .stroke {
+}
+
+.stroke {
     stroke: white;
     stroke-dasharray: 360;
     stroke-dashoffset: 360;
     transition: 0.6s ease-out;
-  }
-  
-  svg {
+}
+
+svg {
     fill: #E6DFCC;
     stroke-width: 2px;
-  }
-  
-  .card:hover .stroke {
+}
+
+.card:hover .stroke {
     stroke-dashoffset: 100;
     transition: 0.6s ease-out;
-  }
+}
 
-  footer {
+footer {
     height: 120px;
     background-color: #557C70;
     color: #ffffff;

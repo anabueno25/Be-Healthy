@@ -8,10 +8,11 @@ body {
     padding: 0;
 }
 
-a{
+a {
     text-decoration: none;
     color: #fff;
 }
+
 #divEntenda {
     display: flex;
     justify-content: space-around;
@@ -22,16 +23,20 @@ a{
     color: white;
     border-radius: 10px;
 }
+
 #p2 {
     background-color: #D6A04F;
     border-radius: 10px;
     font-weight: 600;
 }
+
 #p3 {
     background-color: #557C70;
     color: white;
-    border-radius: 10px;;
+    border-radius: 10px;
+    ;
 }
+
 #p4 {
     background-color: #D6A04F;
     border-radius: 10px;
@@ -41,6 +46,7 @@ a{
 #divTextoComida {
     display: flex;
 }
+
 #divPegaTexto {
     display: flex;
 
@@ -50,23 +56,28 @@ a{
     display: flex;
     justify-content: center;
 }
+
 .comendo {
     height: 500px;
     border: 2px solid white;
     border-radius: 20px;
 }
+
 .header {
     background-color: #557C70;
     width: 100%;
 }
-.liZoom{
+
+.liZoom {
     transition: all 0.5s;
     text-decoration: none;
 }
-.liZoom:hover{
+
+.liZoom:hover {
     transform: scale(1.2);
     text-decoration: none;
 }
+
 .container {
     display: flex;
     width: 80%;
@@ -88,6 +99,7 @@ a{
     align-items: center;
     gap: 40px;
 }
+
 .imagemLogo {
     width: 70px;
 }
@@ -298,7 +310,7 @@ footer p {
 }
 
 #pegaTudo {
-    background-color:#f3eedb;
+    background-color: #f3eedb;
     height: 500px;
 }
 
@@ -324,30 +336,31 @@ footer p {
     transition: 1s;
 }
 
-.manual-btn:not(:last-child){
+.manual-btn:not(:last-child) {
     margin-right: 40px;
 }
-.manual-btn:hover{
+
+.manual-btn:hover {
     background-color: white;
 }
 
-#radio1:checked ~ .first{
+#radio1:checked~.first {
     margin-left: 0;
 }
 
-#radio2:checked ~ .first{
+#radio2:checked~.first {
     margin-left: -25%;
 }
 
-#radio3:checked ~ .first{
+#radio3:checked~.first {
     margin-left: -50%;
 }
 
-#radio4:checked ~ .first{
+#radio4:checked~.first {
     margin-left: -75%;
 }
 
-.navigation-auto div{
+.navigation-auto div {
     border: 2px solid #20a6ff;
     padding: 5px;
     border-radius: 10px;
@@ -355,7 +368,7 @@ footer p {
     transition: 1s;
 }
 
-.navigation-auto{
+.navigation-auto {
     position: absolute;
     width: 800px;
     margin-top: 360px;
@@ -363,22 +376,22 @@ footer p {
     justify-content: center;
 }
 
-.navigation-auto div:not(:last-child){
+.navigation-auto div:not(:last-child) {
     margin-right: 40px;
 }
 
-#radio1:checked ~ navigation-auto .auto-btn1{
+#radio1:checked~navigation-auto .auto-btn1 {
     background-color: white;
 }
 
-#radio2:checked ~ navigation-auto .auto-btn1{
+#radio2:checked~navigation-auto .auto-btn1 {
     background-color: white;
 }
 
-#radio3:checked ~ navigation-auto .auto-btn1{
+#radio3:checked~navigation-auto .auto-btn1 {
     background-color: white;
 }
 
-#radio4:checked ~ navigation-auto .auto-btn1{
+#radio4:checked~navigation-auto .auto-btn1 {
     background-color: white;
 }
