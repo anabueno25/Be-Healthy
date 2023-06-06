@@ -1,3 +1,6 @@
+
+
+// Retorna o primeiro elemento correspondente
 let titulo = document.querySelector('h1')
 let instrucoes = document.querySelector('#instrucoes')
 let aviso = document.querySelector('#aviso')
@@ -18,6 +21,8 @@ let b = document.querySelector('#b')
 let articleQuestoes = document.querySelector('.questoes')
 // ol li com as alternativas
 let alternativas = document.querySelector('#alternativas')
+
+// Criação de json
 
 const q0 = {
     numQuestao   : 0,
@@ -118,8 +123,10 @@ let total  = document.querySelector('#total')
 
 numero.textContent = q1.numQuestao
 
+// Pega a quantidade de questões - 1, porque começa no 0
 let totalDeQuestoes = (questoes.length)-1
 console.log("Total de questões " + totalDeQuestoes)
+// Text content traz todo o conteúdo do texto incluindo o texto oculto pelo css 
 total.textContent = totalDeQuestoes
 
 // MONTAR A 1a QUESTAO COMPLETA, para iniciar o Quiz
@@ -135,22 +142,26 @@ b.setAttribute('value', '1B')
 
 
 // PARA MONTAR AS PROXIMAS QUESTOES
+// Criou uma função com parametro e fez esse parametro de vetor
 function proximaQuestao(nQuestao) {
     numero.textContent = nQuestao
     numQuestao.textContent = questoes[nQuestao].numQuestao
     pergunta.textContent   = questoes[nQuestao].pergunta
     a.textContent = questoes[nQuestao].alternativaA
     b.textContent = questoes[nQuestao].alternativaB
+    // Adiciona um novo atributo ou modifica o valor de um atributo existente num elemento específico.
     a.setAttribute('value', nQuestao+'A')
     b.setAttribute('value', nQuestao+'B')
 }
 
 function bloquearAlternativas() {
+    // Retorna a classe dos elementos bloqueando a questão
     a.classList.add('bloqueado')
     b.classList.add('bloqueado')
 }
 
 function desbloquearAlternativas() {
+       // Retorna a classe dos elementos removendo a questão
     a.classList.remove('bloqueado')
     b.classList.remove('bloqueado')
 }
