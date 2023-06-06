@@ -159,7 +159,7 @@ function calcular() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-            alert('inseriu');
+            alert('Os dados foram inseridos com sucesso!');
             mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
 
