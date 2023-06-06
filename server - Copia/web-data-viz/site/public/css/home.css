@@ -395,3 +395,12 @@ footer p {
 #radio4:checked~navigation-auto .auto-btn1 {
     background-color: white;
 }
+.divRegistrese{
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 14%;
+    right: 1%;
+}
